@@ -11,9 +11,7 @@
 - Streak Tracking – Build study consistency by tracking your daily progress
 - Pomodoro Timer – Use the timer to stay focused during study sessions
 - Study Analytics – View your study stats and trends
-- Mobile Responsive – Works well on both desktop and mobile
-- Smooth Animations – Built using Framer Motion
-- Authentication (optional) – You can add login/signup if needed
+- Authentication – You can add login/signup. 
 
 ---
 
