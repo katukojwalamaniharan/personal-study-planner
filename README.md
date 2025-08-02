@@ -1,1 +1,1 @@
-# personal-study-planner
+# psp2

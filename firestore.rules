@@ -1,0 +1,60 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user owns the document
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Rules for user profiles
+    match /user_profiles/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Rules for user study plans
+    match /user_study_plans/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+      
+      // Rules for subjects subcollection
+      match /subjects/{subjectId} {
+        allow read, write: if isAuthenticated() && isOwner(userId);
+      }
+      
+      // Rules for courses subcollection
+      match /courses/{courseId} {
+        allow read, write: if isAuthenticated() && isOwner(userId);
+        
+        // Rules for tasks subcollection
+        match /tasks/{taskId} {
+          allow read, write: if isAuthenticated() && isOwner(userId);
+        }
+      }
+    }
+
+    // Rules for user goals
+    match /user_goals/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Rules for user progress
+    match /user_progress/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Rules for testimonials (public read, authenticated write)
+    match /testimonials/{testimonialId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Rules for user badges
+    match /user_badges/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+    }
+  }
+} 
