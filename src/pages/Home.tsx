@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import {
   Box,
   VStack,
@@ -7,52 +8,27 @@ import {
   Text,
   Button,
   SimpleGrid,
-  useColorModeValue,
   Container,
   Flex,
-  Icon,
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
+  useColorModeValue,
   useToast,
-  Avatar,
-  Badge,
-  Progress,
-  HStack,
-  IconButton,
-  Divider,
-  Image,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  Wrap,
-  WrapItem,
   Spinner,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
   Center
 } from '@chakra-ui/react';
+
 import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { getUserProfile, getUserProgress } from '../config/firebase';
-import { 
-  FaGraduationCap, 
-  FaBook, 
-  FaChartLine, 
-  FaCalendarAlt, 
-  FaBell, 
-  FaTrophy,
-  FaLightbulb,
-  FaClock,
-  FaCheckCircle,
-  FaStar,
-  FaUser
+
+import {
+  FaGraduationCap,
+  FaBook,
+  FaChartLine,
+  FaCalendarAlt
 } from 'react-icons/fa';
+
 import Sidebar from '../components/Sidebar';
+
 
 const MotionBox = motion(Box);
 
@@ -365,5 +341,6 @@ const Home = () => {
     </Box>
   );
 };
+
 
 export default Home; 
