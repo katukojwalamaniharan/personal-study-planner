@@ -1,5 +1,18 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Target, TrendingUp, Users, Calendar, Moon, Smartphone, Brain, Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
+import {
+  ArrowRight,
+  BookOpen,
+  Target,
+  TrendingUp,
+  Users,
+  Calendar,
+  Moon,
+  Smartphone,
+  Brain,
+  Linkedin,
+  Mail,
+  ArrowDown
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -280,5 +293,6 @@ const About = () => {
     </div>
   );
 };
+
 
 export default About; 
