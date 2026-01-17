@@ -240,7 +240,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Roadmap</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {roadmapItems.map((item, index) => (
+            {roadmapItems.map((item,_index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 flex items-center">
                   <div className="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
@@ -296,3 +296,4 @@ const About = () => {
 
 
 export default About; 
+
